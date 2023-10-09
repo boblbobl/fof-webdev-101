@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css">
+    <link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css">
+    <title>Lær at kode din egen hjemmeside - fra bunden - Aften 1</title>
+</head>
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <h1>Lær at kode din egen hjemmeside - fra bunden</h1>
+            </section>
+
+            <section>
+                <h2>Overblik</h2>
+                <ul>
+                    <li>Introduktion til Kursus</li>
+                    <li>Hvem er jeg</li>
+                    <li>Hvad er en hjemmeside?</li>
+                    <li>HTML</li>
+                    <li>Visual Studio Code</li>
+                    <li>Øvelse
+                        <ol>
+                            <li>Installere Visual Studio Code</li>
+                            <li>Øvelser med HTML</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Introduktion til Kursus</h2>
+                </section>
+                
+
+                <section>
+                    <h3>Tilgang</h3>
+                    <ul>
+                        <li>Begynderkursus i at kode hjemmesider</li>
+                        <li>Hver gang vil det være 50/50 teori/praksis - "learning by doing"</li>
+                        <li>Fokus på "kode" først og dernæst værktøjer</li>
+                        <li>Professionelle værktøjer</li>
+                        <li>Tilpasse kurset kursets deltagere (agil)</li>
+                        <li>8 aftener af 4 lektioner</li>
+                        <li>Kursusmateriale vil være tilgængelig på <a href="https://github.com/boblbobl/fof-webdev-101" target="_blank">GitHub</a></li>
+                    </ul>
+                </section>
+    
+                <section>
+                    <h3>Programmet</h3>
+                    <ul>
+                        <li>Aften 1: HTML + Visual Studio Code</li>
+                        <li>Aften 2: CSS + NPM</li>
+                        <li>Aften 3: Bootstrap CSS Framework</li>
+                        <li>Aften 4: Git/GitHub</li>
+                        <li>Aften 5: JavaScript</li>
+                        <li class="fragment highlight-red">Aften 6: Mere JavaScript</li>
+                        <li class="fragment highlight-red">Aften 7: Static Site Generation</li>
+                        <li class="fragment highlight-red">Aften 8: Opsamling</li>
+                    </ul>
+                </section>
+    
+                <section>
+                    <h3>Målet</h3>
+                    <p>Målet er at I vil kunne lave en "one-pager" i stil med <a href="https://eventyryoga.dk/" target="_blank">denne</a>.</p>
+                    <p>
+                        Find mere inspiration på hvordan en "one-pager" ogsp kan være/se ud på
+                        <a href="https://onepagelove.com/" target="_blank">One Page Love</a>.
+                    </p>
+                </section>
+            </section>
+
+            <section>
+                <h2>Hvem er jeg?</h2>
+                <img src="assets/me.jpg" alt="" style="border-radius: 50%; width: 250px;">
+                <ul>
+                    <li>far til tvillinger og gift med Kia</li>
+                    <li>leder / udvikler / maker</li>
+                    <li>+20 års erfaring</li>
+                    <li>Designit / Creuna / eBay Classifieds / LEGO</li>
+                    <li>underviser?</li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Hvad er en hjemmeside?</h2>
+                </section>
+                <section>
+                    <p>En bruger indtaster en adresse i browserens adressefelt, og hvad sker der så?</p>
+                    <img src="assets/browser-address.png" alt="Browsers adressefelt">
+                </section>
+                <section>
+                    <h3>Browseren anmoder webserveren via HTTP</h3>
+                    <img src="assets/how-the-web-works.png" alt="Illustration af hvordan browser anmoder web server">
+                </section>
+                <section>
+                    <h3>Web Server</h3>
+                    <ul>
+                        <li>Som udgangspunkt leverer Web Serveren HTML retur til Browseren</li>
+                        <li>HTML beskriver hvilke andre ressourcer den skal anmode (CSS, JS, JPG, ...)</li>
+                        <li class="fragment highlight-red">Web Server kan være dynamiske (PHP, ASP, ...)</li>
+                        <li class="fragment highlight-red">HTTP (Hypertext Transfer Protocol)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Primære elementer der udgør en hjemmeside</h3>
+                    <img src="assets/html-css-js.png" alt="Illustration af HTML CSS JS">
+                </section>
+
+            </section>
+
+            <section>
+                <section>
+                    <h2>HTML</h2>
+                </section>
+                <section>
+                    <h3>Hvad er HTML?</h3>
+                    <ul>
+                        <li>HyperText Markup Language</li>
+                        <li>Et dokument der ofte ender med .html eller .htm</li>
+                        <li>Standard sprong til at beskrive hjemmesider</li>
+                        <li>HTML definerer sidens struktur og semantik via HTML elementer</li>
+                        <li>HTML elementer fortæller browseren hvordan indhold skal vises</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>HTML på en Tidslinie</h3>
+
+                </section>
+
+                <section>
+                    <h3>Eksempel på HTML Dokument</h3>
+                    <pre><code class="html" data-line-numbers="1|2,10|3-5|6-9" data-trim>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;title&gt;Sidens Titel&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;h1&gt;Overskrift&lt;/h1&gt;
+                            &lt;p&gt;Dette er et afsnit.&lt;/p&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Hvad er et HTML Element?</h3>
+                    <p>Et HTML element består ofte af et start "tag", noget indhold, og et slut "tag"</p>
+                    <pre><code class="html" data-line-numbers data-trim>
+                        &lt;body&gt;
+                            &lt;h1&gt;Overskrift&lt;/h1&gt;
+                            &lt;p&gt;Dette er et afsnit.&lt;/p&gt;
+                        &lt;/body&gt;
+                    </code></pre>
+                    <p>Her er &lt;h1&gt; start tag og &lt;/h1&gt; slut tag.</p>
+                    <p class="fragment fade-up">Kan I se andre HTML elementer i ovenstående kodeeksempel?</p>
+                </section>
+
+                <section>
+                    <h3>Eksempler på HTML Elementer</h3>
+                    <pre><code class="html" data-line-numbers data-trim>
+                        &lt;h1&gt;Overskrift 1&lt;/h1&gt;
+                        &lt;h2&gt;Overskrift 2&lt;/h2&gt;
+                        &lt;h3&gt;Overskrift 3&lt;/h3&gt;
+                        &lt;h4&gt;Overskrift 4&lt;/h4&gt;
+                        &lt;h5&gt;Overskrift 5&lt;/h5&gt;
+                        &lt;p&gt;
+                            Her er et afsnit med et link.
+                            &lt;a href=&quot;https://www.fof.dk/da/aarhus&quot;&gt;
+                                Link til FOF Aarhus
+                            &lt;/a&gt;
+                        &lt;/p&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Andre Semantiske HTML Elementer</h3>
+                    <pre><code class="html" data-line-numbers="3-11" data-trim>
+                        &lt;html&gt;
+                        &lt;body&gt;
+                            &lt;header&gt;
+                                &lt;nav&gt;&lt;/nav&gt;
+                            &lt;/header&gt;
+                            &lt;main&gt;
+                                &lt;section&gt;&lt;/section&gt;
+                                &lt;article&gt;&lt;/article&gt;
+                                &lt;aside&gt;&lt;/aside&gt;
+                            &lt;/main&gt;
+                            &lt;footer&gt;&lt;/footer&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Ikke-Sematiske HTML Elementer</h3>
+                    <pre><code class="html" data-line-numbers data-trim>
+                        &lt;div id=&quot;1234&quot;&gt;
+                            Her er et område af hjemmesiden isoleret via 
+                            &lt;span class=&quot;highlight&quot;&gt;ikke-semantiske tags&lt;/span&gt;
+                        &lt;/div&gt;
+                    </code></pre>
+                    <p>Ikke-semantiske tags bruges ofte af udviklerer til at "styre" indholdet af en hjemmeside, hvor semantiske tags ikke er tilstrækkelige</p>
+                </section>
+
+                <section>
+                    <h3>"Tomme" HTML Elementer</h3>
+                    <pre><code class="html" data-line-numbers data-trim>
+                        &lt;img src=&quot;mig.jpg&quot; alt=&quot;Billede af mig&quot;&gt;
+                        &lt;meta charset=&quot;UTF-8&quot;&gt;
+                        &lt;br&gt;
+                        &lt;hr&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Gode HTML Ressourcer</h3>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools HTML Tutorial</a></li>
+                        <li><a href="https://www.w3schools.com/tags/default.asp" target="_blank">W3Schools HTML Element Reference</a></li>
+                        <li><a href="https://caniuse.com" target="_blank">Can I Use ...</a></li>
+                        <li><a href="https://html.spec.whatwg.org/multipage/" target="_blank">W3C Specification</a></li>
+                    </ul>
+                </section>
+                
+            </section>
+
+            <section>
+                <section>
+                    <h2>Visual Studio Code</h2>
+                </section>
+                <section>
+                    <h3>Hvad er Visual Studio Code?</h3>
+                    <ul>
+                        <li>Visual Studio Code er en IDE</li>
+                    </ul>
+                    
+                </section>
+            </section>
+
+            <section>
+                <h2>Øvelser</h2>
+                <ul>
+                    <li>Installere <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+                    <li>Opbygning af hjemmeside med HTML</li>
+                    <li>Fri leg</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Tak for i aften...</h2>
+            </section>
+
+        </div>
+    </div>
+    <script type="module" src="/index.js"></script>
+</body>
+</html>
