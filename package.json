@@ -2,16 +2,13 @@
   "name": "fof-webdev-101",
   "version": "1.0.0",
   "description": "Samling af informationer ifm FOF kursus \"Lær at kode din egen hjemmeside - fra bunden\"",
-  "main": "index.js",
+  "main": "docs/index.html",
   "scripts": {
     "dev-server": "web-dev-server --node-resolve --open --watch",
     "start": "npm run dev-server"
   },
   "author": "Lars Diget",
   "license": "MIT",
-  "dependencies": {
-    "reveal.js": "^4.6.1"
-  },
   "devDependencies": {
     "@web/dev-server": "^0.3.2"
   }
