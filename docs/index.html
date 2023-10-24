@@ -4,20 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lær at kode din egen hjemmeside - fra bunden</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: white;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15)
+        }
+    </style>
 </head>
 <body>
-    <h1>Lær at kode din egen hjemmeside - fra bunden</h1>
-    <h2>Program</h2>
-    <ul>
-        <li class="active"><a href="aften-1.html">Aften 1: HTML + Visual Studio Code</a></li>
-        <li class="active"><a href="aften-2.html">Aften 2: CSS + NPM</a></li>
-        <li>Aften 3: Bootstrap CSS Framework</li>
-        <li>Aften 4: Git/GitHub</li>
-        <li>Aften 5: JavaScript</li>
-        <li>Aften 6: Mere JavaScript</li>
-        <li>Aften 7: Static Site Generation</li>
-        <li>Aften 8: Opsamling og afslutning</li>
-    </ul>
+    
+    <header class="cointainer-fluid p-5 mb-5 mt-0 text-center">
+        <h1 class="display-5 fw-bold mt-5">Lær at kode din egen hjemmeside<br /> - fra bunden</h1>
+        <p class="lead mb-5">Et FOF begynderkursus der lærer dig at kode din helt egen hjemmeside fra bunden ved hjælp at profesionelle værktøjer som Visual Studio Code, NPM og Git/GitHub.</p>
+    </header>
+
+    <main class="container mt-5 mb-5">
+        <h2 class="fw-light">Program</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/html+vscode-logo.png" class="card-img-top" alt="HTML + Visual Studio Code">
+                    <div class="card-body">
+                        <h5 class="card-title">Aften 1</h5>
+                         <p class="card-text">HTML + Visual Studio Code</p>
+                        <a href="aften-1.html" class="stretched-link">Se præsentation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/css+npm-logo.png" class="card-img-top" alt="CSS + NPM">
+                    <div class="card-body">
+                        <h5 class="card-title">Aften 2</h5>
+                        <p class="card-text">CSS + NPM</p>
+                        <a href="aften-2.html" class="stretched-link">Se præsentation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/bootstrap+git-logo.png" class="card-img-top" alt="Bootstrap + Git">
+                    <div class="card-body">
+                        <h5 class="card-title">Aften 3</h5>
+                        <span class="position-absolute top-0 translate-middle badge rounded-pill bg-primary fs-3 fw-light">Ny</span>
+                        <p class="card-text">Bootstrap CSS Library + Git</p>
+                        <a href="aften-3.html" class="stretched-link">Se præsentation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/bootstrap-logo.png" class="card-img-top" alt="Mere Bootstrap">
+                    <div class="card-body">
+                        <h5 class="card-title">Aften 4</h5>
+                        <p class="card-text">Mere Bootstrap</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/git+github-logo.png" class="card-img-top" alt="Git + GitHub">
+                    <div class="card-body">
+                        <h5 class="card-title">Aften 5</h5>
+                        <p class="card-text">Git + GitHub</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/javascript-logo.png" class="card-img-top" alt="JavaScript logo">
+                    <div class="card-body">
+                        <h5 class="card-title">Aften 6</h5>
+                        <p class="card-text">JavaScript</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/javascript-logo.png" class="card-img-top" alt="JavaScript logo">
+                    <div class="card-body">
+                        <h5 class="card-title">Aften 7</h5>
+                        <p class="card-text">Mere JavaScript</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/wordpress-logo.png" class="card-img-top" alt="Wordpress logo">
+                    <div class="card-body">
+                        <h5 class="card-title">Aften 8</h5>
+                        <p class="card-text">Wordpress og andre alternativer...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

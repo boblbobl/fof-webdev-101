@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
+    <title>Lær at kode din egen hjemmeside - fra bunden - Aften 3</title>
+</head>
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <h1>Lær at kode din egen hjemmeside</h1>
+                <h2>Aften 3</h2>
+            </section>
+
+            <section>
+                <h2>Overblik</h2>
+                <ul>
+                    <li>HTML+CSS (repetition)</li>
+                    <li>Bootstrap</li>
+                    <li>Git</li>
+                    <li>Øvelser
+                        <ol>
+                            <li>Installere Git</li>
+                            <li>Øvelser med Bootstrap</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Hvor er vi?</h3>
+                <ul>
+                    <li>Aften 1: HTML + Visual Studio Code</li>
+                    <li>Aften 2: CSS + NPM</li>
+                    <li class="fragment highlight-red">Aften 3: Bootstrap + Git</li>
+                    <li class="fragment highlight-red">Aften 4: Mere Bootstrap</li>
+                    <li>Aften 5: Git/GitHub</li>
+                    <li>Aften 6: JavaScript</li>
+                    <li>Aften 7: Mere JavaScript</li>
+                    <li class="fragment highlight-red">Aften 8: Wordpress og andre alternativer</li>
+                </ul>
+            </section>
+    
+            <section>
+                <h3>Målet</h3>
+                <p>Målet er at I vil kunne lave en "one-pager" i stil med <a href="https://eventyryoga.dk/" target="_blank">denne</a>.</p>
+                <p>
+                    Find mere inspiration på hvad en "one-pager" kan være/se ud på
+                    <a href="https://onepagelove.com/" target="_blank">One Page Love</a>.
+                </p>
+            </section>
+
+            <section>
+                <section>
+                    <h2>HTML+CSS (repetition)</h2>
+                </section>
+
+                <section>
+                    <h3>Primære elementer der udgør en hjemmeside</h3>
+                    <img src="assets/html-css-js.png" alt="Illustration af HTML CSS JS">
+                </section>
+
+                <section>
+                    <h3>Browseren anmoder webserveren via HTTP</h3>
+                    <img src="assets/how-the-web-works-2.png" alt="Illustration af hvordan browser anmoder web server">
+                </section>
+
+                <section>
+                    <h3>Hvad er HTML?</h3>
+                    <ul>
+                        <li>HyperText Markup Language</li>
+                        <li>Et dokument der ofte ender med .html eller .htm</li>
+                        <li>Standard sprong til at beskrive hjemmesider</li>
+                        <li>HTML definerer sidens struktur og semantik via HTML elementer</li>
+                        <li>HTML elementer fortæller browseren hvordan indhold skal vises</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Eksempel på HTML Dokument</h3>
+                    <pre><code class="html" data-line-numbers="1|2,10|3-5|6-9" data-trim>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;title&gt;Sidens Titel&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;h1&gt;Overskrift&lt;/h1&gt;
+                            &lt;p&gt;Dette er et afsnit.&lt;/p&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Hvad er et HTML Element?</h3>
+                    <p>Et HTML element består ofte af et start "tag", noget indhold, og et slut "tag"</p>
+                    <pre><code class="html" data-line-numbers data-trim>
+                        &lt;body&gt;
+                            &lt;h1&gt;Overskrift&lt;/h1&gt;
+                            &lt;p&gt;Dette er et afsnit.&lt;/p&gt;
+                        &lt;/body&gt;
+                    </code></pre>
+                    <p>Her er &lt;h1&gt; start tag og &lt;/h1&gt; slut tag.</p>
+                </section>
+
+                <section>
+                    <h3>Eksempler på HTML Elementer</h3>
+                    <pre><code class="html" data-line-numbers data-trim>
+                        &lt;h1&gt;Overskrift 1&lt;/h1&gt;
+                        &lt;h2&gt;Overskrift 2&lt;/h2&gt;
+                        &lt;h3&gt;Overskrift 3&lt;/h3&gt;
+                        &lt;h4&gt;Overskrift 4&lt;/h4&gt;
+                        &lt;h5&gt;Overskrift 5&lt;/h5&gt;
+                        &lt;p&gt;
+                            Her er et afsnit med et link.
+                            &lt;a href=&quot;https://www.fof.dk/da/aarhus&quot;&gt;
+                                Link til FOF Aarhus
+                            &lt;/a&gt;
+                        &lt;/p&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Andre Semantiske HTML Elementer</h3>
+                    <pre><code class="html" data-line-numbers="3-11" data-trim>
+                        &lt;html&gt;
+                        &lt;body&gt;
+                            &lt;header&gt;
+                                &lt;nav&gt;&lt;/nav&gt;
+                            &lt;/header&gt;
+                            &lt;main&gt;
+                                &lt;section&gt;&lt;/section&gt;
+                                &lt;article&gt;&lt;/article&gt;
+                                &lt;aside&gt;&lt;/aside&gt;
+                            &lt;/main&gt;
+                            &lt;footer&gt;&lt;/footer&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Ikke-Sematiske HTML Elementer</h3>
+                    <pre><code class="html" data-line-numbers data-trim>
+                        &lt;div id=&quot;id-1234&quot;&gt;
+                            Her er et område af hjemmesiden isoleret via 
+                            &lt;span class=&quot;highlight&quot;&gt;ikke-semantiske tags&lt;/span&gt;
+                        &lt;/div&gt;
+                    </code></pre>
+                    <p>Ikke-semantiske tags bruges ofte af udviklerer til at "styre" indholdet af en hjemmeside, hvor semantiske tags ikke er tilstrækkelige</p>
+                </section>
+
+                <section>
+                    <h3>"Tomme" HTML Elementer</h3>
+                    <pre><code class="html" data-line-numbers data-trim>
+                        &lt;img src=&quot;mig.jpg&quot; alt=&quot;Billede af mig&quot;&gt;
+                        &lt;meta charset=&quot;UTF-8&quot;&gt;
+                        &lt;br&gt;
+                        &lt;hr&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Hvad er CSS</h3>
+                    <ul>
+                        <li>Cascading Style Sheet</li>
+                        <li>Bruges til at beskrive præsentation af et HTML dokument</li>
+                        <li>Inkluderes CSS can inkluderes in-line, internt via &lt;style&gt; element i header eller via eksterne stylesheet referencer</li>
+                        <li>Styling sker via CSS Syntax Selectors og Properties</li>
+                        <li>Styling Kaskaderer/Nedarves - styling kan overskrives via præcedens</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Simlpe CSS Selectors</h3>
+                    <pre><code class="css" data-line-numbers data-trim>
+                        div {
+                            color: blue;
+                        }
+
+                        #id-1234 {
+                            color: blue;
+                        }
+
+                        .highlight {
+                            color: blue;
+                        }
+                    </code></pre>
+                    <p>Eksempel på HTML element, id og class selectors.</p>
+                </section>
+
+                <section>
+                    <h3>Simple CSS Selectors (fortsat)</h3>
+                    <pre><code class="css" data-line-numbers data-trim>
+                        h1, h2, h3, p {
+                            color: red;
+                        }
+
+                        * {
+                            color: red;
+                        }
+                    </code></pre>
+                    <p>Eksempler på gruppering og universal (wildcard) selectors.</p>
+                </section>
+
+                <section>
+                    <h3>Combinators CSS Selectors</h3>
+                    <pre><code class="css" data-line-numbers data-trim>
+                        div p {
+                            color: yellow;
+                        }
+
+                        div > p {
+                            color: yellow;
+                        }
+                    </code></pre>
+                    <p>Eksempler på descendant og child selectors.</p>
+                </section>
+
+                <section>
+                    <h3>CSS Properties</h3>
+                    <pre><code class="css" data-line-numbers data-trim>
+                        div {
+                            color: #ff0000;
+                            padding: 10px auto;
+                            margin: 10px 20px 10px 20px;
+                            border: 2px solid #00ff00;
+                            border-radius: 5px;
+                            height: 200px;
+                            width: 200px;
+                        }
+                    </code></pre>
+                </section>
+                
+            </section>
+            
+
+            <section>
+                <section>
+                    <h2>Bootstrap</h2>
+                </section>
+                
+                <section>
+                    <h3>Hvad er Bootstrap?</h3>
+                    <ul>
+                        <li>Bootstrap 5</li>
+                        <li>Open Source CSS Framework</li>
+                        <li>JavaScript til interaktivitet</li>
+                        <li>Omfattende Dokumentation</li>
+                        <li>"bootstrape" hjemmesider med standarder man bruger fra gang til gang</li>
+                        <li>den mest populære, men langt fra den eneste (f.eks. <a href="https://bulma.io" target="_blank">Bulma</a>, <a href="https://get.foundation" target="_blank">Foundation</a>, <a href="https://purecss.io" target="_blank">Pure.css</a>)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Boostrap - Grundstenene</h3>
+                    <ol>
+                        <li>Layout</li>
+                        <li>Komponenter</li>
+                        <li>Interaktivitet</li>
+                        <li>Hjælpeværktøjer (til styling)</li>
+                        <li>Temaer</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Fordele ved Bootstrap</h3>
+                    <ol>
+                        <li>Konsistent</li>
+                        <li>Letvægts (>35kb)</li>
+                        <li>Responsive hjemmeside</li>
+                        <li>Stort fællesskab</li>
+                        <li>Skabeloner</li>
+                        <li>Browser support</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Nemt at installere</h3>
+                    <pre>
+                        <code class="html" data-line-numbers="7,11" data-trim>
+                            &lt;!DOCTYPE html&gt;
+                            &lt;html lang=&quot;en&quot;&gt;
+                            &lt;head&gt;
+                                &lt;meta charset=&quot;utf-8&quot;&gt;
+                                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+                                &lt;title&gt;Bootstrap Demo&lt;/title&gt;
+                                &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Containers</h3>
+                    <pre>
+                        <code class="html" data-trim>
+                            &lt;div class=&quot;container&quot;&gt;
+                                &lt;!-- Indhold her --&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;container-fluid&quot;&gt;
+                                &lt;!-- Indhold her --&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Grid - Rækker og Kolonner</h3>
+                    <pre>
+                        <code class="html" data-trim>
+                            &lt;div class=&quot;container&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                    &lt;div class=&quot;col&quot;&gt;
+                                        1 af 3
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;col&quot;&gt;
+                                        2 af 3
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;col&quot;&gt;
+                                        3 af 3
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Grid - Kolonne med fast bredde</h3>
+                    <pre>
+                        <code class="html" data-trim>
+                            &lt;div class=&quot;container&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                    &lt;div class=&quot;col&quot;&gt;
+                                        1 af 3
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;col-6&quot;&gt;
+                                        2 af 3 (fast)
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;col&quot;&gt;
+                                        3 af 3
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Grid - juster ift breakpoints</h3>
+                    <pre>
+                        <code>
+                            &lt;div class=&quot;container&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col-sm-8 col-lg-6&quot;&gt;Col 1&lt;/div&gt;
+                                  &lt;div class=&quot;col-sm-4 col-lg-6&quot;&gt;Col 2&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                </section>              
+
+            </section>
+
+            <section>
+
+                <h2>Git</h2>
+                <ul>
+                    <li>Versionsstyring</li>
+                    <li>Linus Torvalds i 2005</li>
+                    <li>Distribueret</li>
+                    <li>Sammen med GitHub vil vi bruge Git til gemme/dele kode samt hosting af vores hjemmeside</li>
+                </ul>
+
+            </section>
+
+
+            <section>
+                <h2>Øvelser</h2>
+                <ul>
+                    <li>Installere Git</li>
+                    <li>git clone https://github.com/boblbobl/fof-webdev-101.git</li>
+                    <li>Opbygning af hjemmeside med <a href="https://getbootstrap.com" target="_blank">Bootstrap</a></li>
+                    <li>Fri leg</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Tak for i aften...</h2>
+            </section>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            plugins: [ RevealHighlight ]
+        });
+    </script>
+</body>
+</html>
