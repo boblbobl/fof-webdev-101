@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         header {
             height: 40px;
@@ -38,40 +39,97 @@
            margin-bottom: 20px;
         }
 
-        main div.hero h1 {
-           padding-bottom: 200px;
+        main div.hero a {
+           margin-bottom: 200px;
         }
         
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.svg" alt="Bootstrap Logo" style="height: 100%;">
-        <span>Logo</span>
-        <nav>
-            <a href="#modules">Modules</a> |
-            <a href="#html">HTML</a> |
-            <a href="#css">CSS</a> |
-            <a href="#bootstrap">Bootstrap</a> |
-            <a href="#javascript">JavaScript</a>
-        </nav>
-    </header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Logo
+              </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#modules">Modules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#html">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#css">CSS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#bootstrap">Bootstrap</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#javascript">JavaScript</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+
+
     <main>
         <div class="hero">
             <img src="logo.svg" alt="Bootstrap Logo">
             <h1>Lær at kode din egen hjemmeside - fra bunden</h1>
+            <a href="#" class="btn btn-success" onclick="alert('test');">Her er en knap</a>
         </div>
 
-        <a id="modules"><h2>Modules</h2></a>
-        <p>
-            Icing dessert tart jelly marzipan cupcake cheesecake oat cake cotton candy. Powder marzipan fruitcake jelly-o biscuit. Wafer carrot cake gummies ice cream danish. Tiramisu cookie chupa chups gingerbread chocolate wafer tiramisu cheesecake dessert. Pastry macaroon oat cake gummies lollipop dragée marshmallow. Lemon drops donut jujubes caramels wafer candy canes lemon drops macaroon. Bonbon pudding chupa chups tootsie roll lollipop chocolate donut.
-        </p>
-        <p>
-            Macaroon chocolate bar wafer jujubes jelly beans oat cake cake. Halvah jelly sesame snaps biscuit cake lollipop macaroon tart. Marzipan icing croissant brownie jelly beans fruitcake chupa chups chupa chups. Sesame snaps apple pie dragée sesame snaps halvah. Lemon drops cheesecake fruitcake caramels jelly beans chocolate powder. Pudding tiramisu halvah sesame snaps tart bonbon macaroon gingerbread. Topping chupa chups gummies bonbon jujubes dragée jelly beans.
-        </p>
-        <p>
-            Candy canes dragée candy canes pie apple pie. Ice cream danish fruitcake apple pie tart sweet roll oat cake pie sweet. Croissant pastry sesame snaps muffin topping. Shortbread gummi bears croissant tiramisu soufflé. Cookie caramels croissant muffin lemon drops fruitcake. Jujubes candy dessert sweet roll ice cream croissant. Liquorice cheesecake lollipop sweet soufflé cupcake pudding cake.
-        </p>
+        <div class="container-fluid my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+                <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+                <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+                <p class="col-lg-8 mx-auto fs-5 text-muted">
+                This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+                </p>
+                <div class="d-inline-flex gap-2 mb-5">
+                <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+                    Call to action
+                    <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+                </button>
+                <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+                    Secondary link
+                </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a id="modules"><h2>Modules</h2></a>
+            <div class="row">
+
+                <div class="col-sm-12 col-lg-4">
+                    <p>
+                        Icing dessert tart jelly marzipan cupcake cheesecake oat cake cotton candy. Powder marzipan fruitcake jelly-o biscuit. Wafer carrot cake gummies ice cream danish. Tiramisu cookie chupa chups gingerbread chocolate wafer tiramisu cheesecake dessert. Pastry macaroon oat cake gummies lollipop dragée marshmallow. Lemon drops donut jujubes caramels wafer candy canes lemon drops macaroon. Bonbon pudding chupa chups tootsie roll lollipop chocolate donut.
+                    </p>
+                </div>
+                <div class="col">
+                    <p>
+                        Icing dessert tart jelly marzipan cupcake cheesecake oat cake cotton candy. Powder marzipan fruitcake jelly-o biscuit. Wafer carrot cake gummies ice cream danish. Tiramisu cookie chupa chups gingerbread chocolate wafer tiramisu cheesecake dessert. Pastry macaroon oat cake gummies lollipop dragée marshmallow. Lemon drops donut jujubes caramels wafer candy canes lemon drops macaroon. Bonbon pudding chupa chups tootsie roll lollipop chocolate donut.
+                    </p>
+                </div>
+                <div class="col">
+                    <p>
+                        Icing dessert tart jelly marzipan cupcake cheesecake oat cake cotton candy. Powder marzipan fruitcake jelly-o biscuit. Wafer carrot cake gummies ice cream danish. Tiramisu cookie chupa chups gingerbread chocolate wafer tiramisu cheesecake dessert. Pastry macaroon oat cake gummies lollipop dragée marshmallow. Lemon drops donut jujubes caramels wafer candy canes lemon drops macaroon. Bonbon pudding chupa chups tootsie roll lollipop chocolate donut.
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
 
         <a id="html"><h2>HTML</h2></a>
         <p>
@@ -116,6 +174,6 @@
     <footer>
         &copy; Copyright 2023. Lars Diget
     </footer>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
