@@ -5,7 +5,7 @@
 - Aften 1: HTML + Visual Studio Code
 - Aften 2: CSS + NPM
 - Aften 3: Bootstrap + Git
-- Aften 3: Mere Bootstrap
+- Aften 4: Mere Bootstrap
 - Aften 5: Git/GitHub
 - Aften 6: JavaScript
 - Aften 7: Mere JavaScript
