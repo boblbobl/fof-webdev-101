@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
+    <title>Lær at kode din egen hjemmeside - fra bunden - Aften 5</title>
+</head>
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <h1>Lær at kode din egen hjemmeside</h1>
+                <h2>Aften 5</h2>
+            </section>
+
+            <section>
+                <h2>Overblik</h2>
+                <ul>
+                    <li>Tooling (repetition)</li>
+                    <li>Git + GitHub</li>
+                    <li>Øvelser
+                        <ol>
+                            <li>Oprette GitHub konto</li>
+                            <li>GitHub Pages til at hoste vores egen hjemmeside</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Hvor er vi?</h3>
+                <ul>
+                    <li>Aften 1: HTML + Visual Studio Code</li>
+                    <li>Aften 2: CSS + NPM</li>
+                    <li>Aften 3: Bootstrap + Git</li>
+                    <li>Aften 4: Mere Bootstrap</li>
+                    <li class="fragment highlight-red">Aften 5: Git/GitHub</li>
+                    <li>Aften 6: JavaScript</li>
+                    <li>Aften 7: Mere JavaScript</li>
+                    <li>Aften 8: Wordpress og andre alternativer</li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Tooling (repetition)</h2>
+                </section>
+
+                <section>
+                    <h3>Hvad er Visual Studio Code?</h3>
+                    <ul>
+                        <li>Visual Studio Code (VS Code) er en IDE</li>
+                        <li>Modsat en alm. tekst editor (notepad eller lign.) kan VS Code understøtte en række sprog</li>
+                        <li>Lynhurtig og nemt at udvide via Extensions</li>
+                        <li>Ud-af-boksen uderstøttes HTML, CSS, JavaScript m.fl.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Hvad er NPM?</h3>
+                    <ul>
+                        <li>Node Pakage Management</li>
+                        <li>Standard pakke manager til Node.js (server-side scripting)</li>
+                        <li>Command-line klient (npm)</li>
+                        <li><a href="https://www.npmjs.com" target="_blank">Online</a> database af pakker</li>
+                        <li>Vi vil primære bruge den til at beskrive vores løsning</li>
+                        <li>... og køre lokalt en udvikligswebserver</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hvad er Git</h2>
+                    <ul>
+                        <li>Versionsstyring</li>
+                        <li>Linus Torvalds i 2005</li>
+                        <li>Distribueret</li>
+                        <li>Sammen med GitHub vil vi bruge Git til gemme/dele kode samt hosting af vores hjemmeside</li>
+                    </ul>
+                </section>
+                
+            </section>
+            
+
+            <section>
+                <section>
+                    <h2>Git+GitHub</h2>
+                </section>
+                
+                <section>
+                    <h3>Hvad er Git (fortsat)?</h3>
+                    <ul>
+                        <li>Distribueret Versionsstyring</li>
+                        <li>Git tager et "billede" af hvordan dit projekt ser ud på et givent tidspunkt</li>
+                        <li>Git gemmer kun ændringer</li>
+                        <li>Git er hurtigt</li>
+                        <li>arbejder med branches, commits, merges</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h3>Hvad er GitHub?</h3>
+                    <ul>
+                        <li>Live i 2008</li>
+                        <li>Tilbyder et centralt sted på Internettet til din kode/kodehistorik</li>
+                        <li>Gør det lettere at arbejde med kode i fælleskab</li>
+                        <li>Projektstyring/Automation/Sikkerhed</li>
+                        <li>Købt af Microsoft i 2018</li>                        
+                        <li>Ikke den eneste (<a href="https://bitbucket.org" target="_blank">BitBucket</a>, <a href="https://about.gitlab.com">GitLab</a>), men klart den mest populære</li>
+                        <li>Bliver brugt af ~100 millioner udviklere</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Git Versioner</h3>
+                    <img src="assets/git-versions.png" alt="">
+                </section>
+
+                <section>
+                    <h3>GitHub Funktioner</h3>
+                    <ul>
+                        <li>Pull Requests</li>
+                        <li>Issues</li>
+                        <li>Actions</li>
+                        <li class="fragment highlight-red">Pages</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>GitHub er Gratis</h3>
+                    <ul>
+                        <li>Ubegrænset private/public kode biblioteker</li>
+                        <li>2.000 CI/CD min/mdr</li>
+                        <li>500 MB lagerplads til pakker</li>
+                        <li>Ny issues og projects</li>
+                        <li>Community Support</li>
+                        <li>Automatiske sikkerheds- og version updates</li>
+                    </ul>
+                    
+                </section>
+
+            </section>
+
+
+            <section>
+                <section>
+                    <h2>Øvelser</h2>
+                </section>
+
+                <section>
+                    <h3>Målet</h3>
+                    <p>Målet er at I vil kunne lave en "one-pager" i stil med <a href="https://eventyryoga.dk/" target="_blank">denne</a>.</p>
+                    <p>Inspireret af møbelsnedkerne udenfor kursuslokalet, skal vi lave vores egen hjemmeside.</p>
+                </section>
+
+                <section>
+                    <h3>I aften...</h3>
+                    <ul>
+                        <li>Oprette en GitHub konto</li>
+                        <li>Konfigurere Git lokalt til at "pege" på GitHub</li>
+                        <li>Uploade vores hjemmeside via Visual Studio Code</li>
+                        <li>Fortsat arbejde med egen hjemmeside (aka fri leg)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Oprette en GitHub konto</h3>
+                    <img src="assets/github-exercise-1.png" alt="">
+                </section>
+
+                <section>
+                    <h3>Indsætte e-mail, password og brugernavn</h3>
+                    <img src="assets/github-exercise-2.png" alt="">
+                </section>
+
+                <section>
+                    <h3>Løs Captcha</h3>
+                    <img src="assets/github-exercise-3.png" alt="">
+                </section>
+
+                <section>
+                    <h3>Udfyld Spørgeskema (1)</h3>
+                    <img src="assets/github-exercise-4.png" alt="">
+                </section>
+
+                <section>
+                    <h3>Udfyld Spørgeskema (2)</h3>
+                    <img src="assets/github-exercise-5.png" alt="">
+                </section>
+
+                <section>
+                    <h3>Opret Gratis konto (1)</h3>
+                    <img src="assets/github-exercise-6.png" alt="">
+                </section>
+
+                <section>
+                    <h3>Opret Gratis konto (2)</h3>
+                    <img src="assets/github-exercise-7.png" alt="">
+                </section>
+
+                <section>
+                    <h3>Ta da... Konto er oprettet!</h3>
+                    <img src="assets/github-exercise-8.png" alt="">
+                </section>
+
+            </section>
+
+            <section>
+                <h2>Tak for i aften...</h2>
+            </section>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            plugins: [ RevealHighlight ]
+        });
+    </script>
+</body>
+</html>
