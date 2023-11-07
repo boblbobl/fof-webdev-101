@@ -4,7 +4,7 @@
   "description": "Samling af informationer ifm FOF kursus \"Lær at kode din egen hjemmeside - fra bunden\"",
   "main": "docs/index.html",
   "scripts": {
-    "dev-server": "web-dev-server --node-resolve --open --watch --root-dir ./docs",
+    "dev-server": "web-dev-server --node-resolve --open --watch",
     "start": "npm run dev-server"
   },
   "author": "Lars Diget",
