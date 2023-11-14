@@ -21,11 +21,26 @@
 <body>
     <div class="container">
         <div class="position-absolute top-50 start-50 translate-middle">
-            <i id="lightbulb" class="bi bi-lightbulb-fill"></i>
+            <i id="lightbulb" class=""></i>
             <div class="form-check form-switch position-absolute top-100 start-50 translate-middle">
-                <input id="switch" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <input id="switch" class="form-check-input" type="checkbox" role="switch" onclick="ToggleLight()">
             </div>
         </div>
     </div>
+    <script>
+        function ToggleLight() {
+            let s = document.getElementById("switch");
+            let l = document.getElementById("lightbulb");
+            
+            if (s.checked) {
+                l.style.color = "yellow";
+                l.className = "bi bi-lightbulb-fill"
+            }
+            else {
+                l.style.color = "white";
+                l.className = "bi bi-lightbulb"
+            }
+        }
+    </script>
 </body>
 </html>

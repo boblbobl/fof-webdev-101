@@ -18,13 +18,24 @@
                 </ul>
                 <div class="input-group mt-3">
                     <input id="new-grocery-item" type="text" class="form-control" placeholder="Beskrivelse af vare" aria-label="Beskrivelse af vare" aria-describedby="button-add">
-                    <button id="button-add" class="btn btn-outline-primary" type="button">Tilføj</button>
+                    <button id="button-add" class="btn btn-outline-primary" type="button" onclick="AddGrocery()">Tilføj</button>
                   </div>
             </div>
         </div>
     </div>
     <script src="app.js"></script>
     <script type="text/javascript">
+        function AddGrocery() {
+            let input = document.getElementById("new-grocery-item");
+            let l = document.createElement("li");
+            l.className = "list-group-item";
+            l.innerHTML = input.value;
+            let list = document.getElementById("grocery-list");
+            list.appendChild(l);
+
+            UpdateGroceryCount();
+        }
+
         (function() {
             UpdateGroceryCount();
         })();
