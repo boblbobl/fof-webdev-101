@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
+    <title>Lær at kode din egen hjemmeside - fra bunden - Aften 6</title>
+</head>
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <h1>Lær at kode din egen hjemmeside</h1>
+                <h2>Aften 6</h2>
+            </section>
+
+            <section>
+                <h2>Overblik</h2>
+                <ul>
+                    <li>Hjemmeside udvikling (repetition)</li>
+                    <li>JavaScript</li>
+                    <li>Øvelser
+                        <ol>
+                            <li>Diverse øvelse med JavaScript</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Hvor er vi?</h3>
+                <ul>
+                    <li>Aften 1: HTML + Visual Studio Code</li>
+                    <li>Aften 2: CSS + NPM</li>
+                    <li>Aften 3: Bootstrap + Git</li>
+                    <li>Aften 4: Mere Bootstrap</li>
+                    <li>Aften 5: Git/GitHub</li>
+                    <li class="fragment highlight-red">Aften 6: JavaScript</li>
+                    <li>Aften 7: Mere JavaScript</li>
+                    <li>Aften 8: Wordpress og andre alternativer</li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Hjemmeside udvikling (repetition)</h2>
+                </section>
+
+                <section>
+                    <h3>Primære elementer der udgør en hjemmeside</h3>
+                    <img src="assets/html-css-js.png" alt="Illustration af HTML CSS JS">
+                </section>
+
+                <section>
+                    <h3>Browseren anmoder webserveren via HTTP</h3>
+                    <img src="assets/how-the-web-works-3.png" alt="Illustration af hvordan browser anmoder web server">
+                </section>
+
+                <section>
+                    <h3>Hvad er HTML?</h3>
+                    <ul>
+                        <li>HyperText Markup Language</li>
+                        <li>Et dokument der ofte ender med .html eller .htm</li>
+                        <li>Standard sprong til at beskrive hjemmesider</li>
+                        <li>HTML definerer sidens struktur og semantik via HTML elementer</li>
+                        <li>HTML elementer fortæller browseren hvordan indhold skal vises</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Hvad er CSS</h3>
+                    <ul>
+                        <li>Cascading Style Sheet</li>
+                        <li>Bruges til at beskrive præsentation af et HTML dokument</li>
+                        <li>Inkluderes CSS can inkluderes in-line, internt via &lt;style&gt; element i header eller via eksterne stylesheet referencer</li>
+                        <li>Styling sker via CSS Syntax Selectors og Properties</li>
+                        <li>Styling Kaskaderer/Nedarves - styling kan overskrives via præcedens</li>
+                    </ul>
+                </section>
+                
+            </section>
+            
+
+            <section>
+                <section>
+                    <h2>JavaScript</h2>
+                </section>
+                
+                <section>
+                    <h3>Hvad er JavaScript?</h3>
+                    <ul>
+                        <li>High-level intrepreted (fortolket) programmeringssprog</li>
+                        <li>Kan bruges til at tilføje interaktivitet til din hjemmeside</li>
+                        <li>JavaScript ≠ Java</li>
+                        <li>Libraries og Frameworks (JQuery, Bootstrap, D3, GSAP, Threes.js, React, ...)</li>
+                        <li>StackOverflow’s 2022 Udvikler Spørgeskema viser at 67.9% af alle professionelle udvikler arbejder med JavaScript</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>JS på en tidslinje...</h3>
+                    <img src="assets/js-timeline.png" alt="JS tidslinje">
+                </section>
+
+                <section>
+                    <h3>Hvad kan man med JavaScript?</h3>
+                    <ul>
+                        <li>Kan manipulere HTML elementer</li>
+                        <li>Kan interagere med browseren</li>
+                        <li>AJAX kald (Asyncronious JavaScript And XML)</li>
+                        <li>Med hjælp fra indbygget metoder som Date/Math/Strings/Arrays m.fl.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>AJAX kald via JavaScript</h3>
+                    <img src="assets/ajax-call.png" alt="Illustration af AJAX kald via browser">
+                </section>
+
+                <section>
+                    <h3>Hvordan bruges JavaScript så på en hjemmeside?</h3>
+                    <ul>
+                        <li>Indsættes direkte på elementet</li>
+                        <li>Indsættes via &lt;script&gt; element i header</li>
+                        <li>Indsættes via ekstern JavaScript fil</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Eksempel med &lt;button&gt; elementets on-click attribut</h3>
+
+                    <pre>
+                        <code class="html" data-line-numbers data-trim>
+                            &lt;button onclick=&quot;alert(&#39;Hej Verden!&#39;)&quot;&gt;Klik mig...&lt;/button&gt;
+                        </code>
+                    </pre>
+                    
+                </section>
+
+                <section>
+                    <h3>Eksempel med &lt;script&gt; element i head</h3>
+                    <pre>
+                        <code class="html" data-line-numbers="3-5" data-trim>
+                            &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;script type=&quot;text/javascript&quot;&gt;
+                                    alert(document.getElementsByTagName(&quot;li&quot;).length); 
+                                &lt;/script&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Indkøbsliste&lt;/h1&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;Toiletpapir&lt;/li&gt;
+                                    &lt;li&gt;Opvaskesæbe&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Eksempel med &lt;script&gt; element i body</h3>
+                    <pre>
+                        <code class="html" data-line-numbers="10-12" data-trim>
+                            &lt;html&gt;
+                            &lt;head&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Indkøbsliste&lt;/h1&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;Toiletpapir&lt;/li&gt;
+                                    &lt;li&gt;Opvaskesæbe&lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;script type=&quot;text/javascript&quot;&gt;
+                                    alert(document.getElementsByTagName(&quot;li&quot;).length); 
+                                &lt;/script&gt;
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Eksempel med script i ekstern fil</h3>
+                    <pre>
+                        <code class="html" data-line-numbers="10" data-trim>
+                            &lt;html&gt;
+                            &lt;head&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Indkøbsliste&lt;/h1&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;Toiletpapir&lt;/li&gt;
+                                    &lt;li&gt;Opvaskesæbe&lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Variabler i JavaScript</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            x = 5;
+                            y = 6;
+                            z = x + y;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            let x = 5;
+                            let y = 6;
+                            let z = x + y;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            const price1 = 5;
+                            const price2 = 6;
+                            let total = price1 + price2;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Funktioner i JavaScript</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            function SayHi(name) {
+                                alert("Hi " + name + "!");
+                            }
+                    
+                            SayHi("John");
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Betingelser i JavaScript (1)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            if (hour < 18) {
+                                greeting = "Good day";
+                            } 
+                            else {
+                                greeting = "Good evening";
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Betingelser i JavaScript (2)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            switch (day) {
+                                case 6:
+                                    text = "Today is Saturday";
+                                    break;
+                                case 0:
+                                    text = "Today is Sunday";
+                                    break;
+                                default:
+                                    text = "Looking forward to the Weekend";
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Gode JS Ressourcer</h3>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">W3Schools JS Tutorial</a></li>
+                        <li><a href="https://www.w3schools.com/jsref/default.asp" target="_blank">W3Schools JS Reference</a></li>
+                        <li><a href="https://caniuse.com" target="_blank">Can I Use ...</a></li>
+                    </ul>
+                </section>
+
+            </section>
+
+
+            <section>
+                <section>
+                    <h2>Øvelser</h2>
+                </section>
+
+                <section>
+                    <h3>Målet</h3>
+                    <p>Målet er at I vil kunne lave en "one-pager" i stil med <a href="https://eventyryoga.dk/" target="_blank">denne</a>.</p>
+                    <p>Inspireret af møbelsnedkerne udenfor kursuslokalet, skal vi lave vores egen hjemmeside.</p>
+                </section>
+
+                <section>
+                    <h3>I aften...</h3>
+                    <ul>
+                        <li>Gennemgå basale JavaScript eksempler</li>
+                        <li>Se hvordan vi kan bruge JavaScript i vores øvelses-side</li>
+                        <li>Fortsat arbejde med egen hjemmeside (aka fri leg)</li>
+                    </ul>
+                </section>
+
+            </section>
+
+            <section>
+                <h2>Tak for i aften...</h2>
+            </section>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            plugins: [ RevealHighlight ]
+        });
+    </script>
+</body>
+</html>
