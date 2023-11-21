@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
+    <title>Lær at kode din egen hjemmeside - fra bunden - Aften 6</title>
+</head>
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <h1>Lær at kode din egen hjemmeside</h1>
+                <h2>Aften 7</h2>
+            </section>
+
+            <section>
+                <h2>Overblik</h2>
+                <ul>
+                    <li>JavaScript (repetition)</li>
+                    <li>Mere JavaScript</li>
+                    <li>Øvelser
+                        <ol>
+                            <li>Diverse øvelse med JavaScript</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Hvor er vi?</h3>
+                <ul>
+                    <li>Aften 1: HTML + Visual Studio Code</li>
+                    <li>Aften 2: CSS + NPM</li>
+                    <li>Aften 3: Bootstrap + Git</li>
+                    <li>Aften 4: Mere Bootstrap</li>
+                    <li>Aften 5: Git/GitHub</li>
+                    <li>Aften 6: JavaScript</li>
+                    <li class="fragment highlight-red">Aften 7: Mere JavaScript</li>
+                    <li>Aften 8: Wordpress og andre alternativer</li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h2>JavaScriptm (repetition)</h2>
+                </section>
+
+                <section>
+                    <h3>Primære elementer der udgør en hjemmeside</h3>
+                    <img src="assets/html-css-js.png" alt="Illustration af HTML CSS JS">
+                </section>
+
+                <section>
+                    <h3>Browseren anmoder webserveren via HTTP</h3>
+                    <img src="assets/how-the-web-works-3.png" alt="Illustration af hvordan browser anmoder web server">
+                </section>
+                
+                <section>
+                    <h3>Hvad er JavaScript?</h3>
+                    <ul>
+                        <li>High-level intrepreted (fortolket) programmeringssprog</li>
+                        <li>Kan bruges til at tilføje interaktivitet til din hjemmeside</li>
+                        <li>JavaScript ≠ Java</li>
+                        <li>Libraries og Frameworks (JQuery, Bootstrap, D3, GSAP, Threes.js, React, ...)</li>
+                        <li>StackOverflow’s 2022 Udvikler Spørgeskema viser at 67.9% af alle professionelle udvikler arbejder med JavaScript</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Hvad kan man med JavaScript?</h3>
+                    <ul>
+                        <li>Kan manipulere HTML elementer</li>
+                        <li>Kan interagere med browseren</li>
+                        <li>AJAX kald (Asyncronious JavaScript And XML)</li>
+                        <li>Med hjælp fra indbygget metoder som Date/Math/Strings/Arrays m.fl.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>AJAX kald via JavaScript</h3>
+                    <img src="assets/ajax-call.png" alt="Illustration af AJAX kald via browser">
+                </section>
+
+                <section>
+                    <h3>Hvordan bruges JavaScript så på en hjemmeside?</h3>
+                    <ul>
+                        <li>Indsættes direkte på elementet</li>
+                        <li>Indsættes via &lt;script&gt; element i header</li>
+                        <li>Indsættes via ekstern JavaScript fil</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Eksempel med &lt;button&gt; elementets on-click attribut</h3>
+
+                    <pre>
+                        <code class="html" data-line-numbers data-trim>
+                            &lt;button onclick=&quot;alert(&#39;Hej Verden!&#39;)&quot;&gt;Klik mig...&lt;/button&gt;
+                        </code>
+                    </pre>
+                    
+                </section>
+
+                <section>
+                    <h3>Eksempel med &lt;script&gt; element i head</h3>
+                    <pre>
+                        <code class="html" data-line-numbers="3-5" data-trim>
+                            &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;script type=&quot;text/javascript&quot;&gt;
+                                    alert(document.getElementsByTagName(&quot;li&quot;).length); 
+                                &lt;/script&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Indkøbsliste&lt;/h1&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;Toiletpapir&lt;/li&gt;
+                                    &lt;li&gt;Opvaskesæbe&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Eksempel med &lt;script&gt; element i body</h3>
+                    <pre>
+                        <code class="html" data-line-numbers="10-12" data-trim>
+                            &lt;html&gt;
+                            &lt;head&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Indkøbsliste&lt;/h1&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;Toiletpapir&lt;/li&gt;
+                                    &lt;li&gt;Opvaskesæbe&lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;script type=&quot;text/javascript&quot;&gt;
+                                    alert(document.getElementsByTagName(&quot;li&quot;).length); 
+                                &lt;/script&gt;
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Eksempel med script i ekstern fil</h3>
+                    <pre>
+                        <code class="html" data-line-numbers="10" data-trim>
+                            &lt;html&gt;
+                            &lt;head&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Indkøbsliste&lt;/h1&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;Toiletpapir&lt;/li&gt;
+                                    &lt;li&gt;Opvaskesæbe&lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Variabler i JavaScript</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            x = 5;
+                            y = 6;
+                            z = x + y;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            let x = 5;
+                            let y = 6;
+                            let z = x + y;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            const price1 = 5;
+                            const price2 = 6;
+                            let total = price1 + price2;
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Funktioner i JavaScript</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            function SayHi(name) {
+                                alert("Hi " + name + "!");
+                            }
+                    
+                            SayHi("John");
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Betingelser i JavaScript (1)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            if (hour < 18) {
+                                greeting = "Good day";
+                            } 
+                            else {
+                                greeting = "Good evening";
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Betingelser i JavaScript (2)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            switch (day) {
+                                case 6:
+                                    text = "Today is Saturday";
+                                    break;
+                                case 0:
+                                    text = "Today is Sunday";
+                                    break;
+                                default:
+                                    text = "Looking forward to the Weekend";
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+            </section>
+
+            <section>
+                <section>
+                    <h2>Mere JavaScript</h2>
+                </section>
+
+                <section>
+                    <h3>Løkker (1)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            let text = "";
+
+                            for (let i = 0; i < cars.length; i++) {
+                                text += cars[i] + "<br>";
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Løkker (2)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            while (i < 10) {
+                                text += "The number is " + i;
+                                i++;
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Arrays (lister)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            let cars = ["Saab", "Volvo", "BMW"];
+
+                            let fibonachi = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Objekter</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            const person = {
+                                firstName: "John",
+                                lastName: "Doe",
+                                age: 50,
+                                eyeColor: "blue"
+                            };
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Array af objekter</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            cars = [
+                                {type:"Volvo", year:2016},
+                                {type:"Saab", year:2001},
+                                {type:"BMW", year:2010}
+                            ]
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Metoder på Arrays (1)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            const numbers = [65, 44, 12, 4];
+                            numbers.forEach(myFunction)
+
+                            function myFunction(item, index, arr) {
+                                arr[index] = item * 10;
+                            }
+                        </code>
+                    </pre>
+                    <p>forEach løber alle elementer i arrays igennem</p>
+                </section>
+
+                <section>
+                    <h3>Metoder på Arrays (2)</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+                            
+                            // Tilføjer et element til slutningen af arrayet
+                            fruits.push("Kiwi");
+
+                            // Fjerner et element fra slutningen af arrayet
+                            fruits.pop();
+
+                            // Tilføjer et element til starten af arrayet
+                            fruits.unshift("Kiwi");
+
+                            // Fjerner et element fra starten af arrayet
+                            fruits.shift();
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Local Storage</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            // Gemmer en værdi i local storage
+                            localStorage.setItem(key, value);
+
+                            // Henter en værdi fra local storage
+                            let lastname = localStorage.getItem(key);
+
+                            // Sletter en værdi fra local storage
+                            localStorage.removeItem(key);
+
+                            // Sletter alt fra local storage
+                            localStorage.clear();
+                        </code>
+                    </pre>
+                    <p>localStorage bliver gemt i browseren og vil fortsat være gemt også efter browseren er lukkes</p>
+                </section>
+
+                <section>
+                    <h3>Fetch API</h3>
+                    <pre>
+                        <code class="js" data-line-numbers data-trim>
+                            fetch('readme.txt')
+                                .then(response => response.text())
+                                .then(data => console.log(data))
+                                .catch(error => {
+                                    // handle the error
+                                });
+                        </code>
+                    </pre>
+
+                </section>
+
+                <section>
+                    <h3>Gode JS Ressourcer</h3>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">W3Schools JS Tutorial</a></li>
+                        <li><a href="https://www.w3schools.com/jsref/default.asp" target="_blank">W3Schools JS Reference</a></li>
+                        <li><a href="https://caniuse.com" target="_blank">Can I Use ...</a></li>
+                    </ul>
+                </section>
+
+            </section>
+
+
+            <section>
+                <section>
+                    <h2>Øvelser</h2>
+                </section>
+
+                <section>
+                    <h3>Målet</h3>
+                    <p>Målet er at I vil kunne lave en "one-pager" i stil med <a href="https://eventyryoga.dk/" target="_blank">denne</a>.</p>
+                    <p>Inspireret af møbelsnedkerne udenfor kursuslokalet, skal vi lave vores egen hjemmeside.</p>
+                </section>
+
+                <section>
+                    <h3>I aften...</h3>
+                    <ul>
+                        <li>Gennemgå flere JavaScript eksempler</li>
+                        <li>Fortsat arbejde med egen hjemmeside (aka fri leg)</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+
+                <section>
+                    <h2>Firebase</h2>
+                    <p>Sådan opretter I en Firebase Realtime Database</p>
+                </section>
+
+                <section>
+                    <img src="assets/firebase-step-1.png" alt="">
+                </section>
+
+                <section>
+                    <img src="assets/firebase-step-2.png" alt="">
+                </section>
+
+                <section>
+                    <img src="assets/firebase-step-3.png" alt="">
+                </section>
+
+                <section>
+                    <img src="assets/firebase-step-4.png" alt="">
+                </section>
+
+                <section>
+                    <img src="assets/firebase-step-5.png" alt="">
+                </section>
+
+                <section>
+                    <img src="assets/firebase-step-6.png" alt="">
+                </section>
+
+                <section>
+                    <img src="assets/firebase-step-7.png" alt="">
+                </section>
+
+            </section>
+
+            <section>
+                <h2>Tak for i aften...</h2>
+            </section>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            plugins: [ RevealHighlight ]
+        });
+    </script>
+</body>
+</html>

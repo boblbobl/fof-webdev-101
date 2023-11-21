@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indkøbsliste 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6">
+                <h1 class="fs-1 fw-lighter mt-5">Indkøbsliste <span id="grocery-count" class="badge rounded-pill text-bg-success fs-6 align-top">0</span></h1>
+                <ul id="grocery-list" class="list-group">
+                    <li class="list-group-item placeholder-glow"><span class="placeholder col-7"></span></li>
+                    <li class="list-group-item placeholder-glow"><span class="placeholder col-3"></li>
+                    <li class="list-group-item placeholder-glow"><span class="placeholder col-5"></span></li>
+                </ul>
+                <div class="input-group mt-3">
+                    <input id="new-grocery-item" type="text" class="form-control" placeholder="Beskrivelse af vare" aria-label="Beskrivelse af vare" aria-describedby="button-add">
+                    <button id="button-add" class="btn btn-outline-primary" type="button" onclick="AddGrocery()">Tilføj</button>
+                </div>
+                <button class="btn btn-outline-danger mt-3" onclick="EmptyGroceries()">Tøm indkøbsliste</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let groceries = JSON.parse(localStorage.getItem("groceries") || "[]");
+
+        const input = document.getElementById("new-grocery-item");
+        const button = document.getElementById("button-add");
+
+        function EmptyGroceries() {
+            groceries = [];
+            localStorage.clear();
+
+            LoadGroceries();
+        }
+
+        function LoadGroceries() {
+            const list = document.getElementById("grocery-list");
+            const count = document.getElementById("grocery-count");
+            
+            list.innerHTML = "";
+
+            groceries.forEach(grocery => {
+
+                let l = document.createElement("li");
+                l.className = "list-group-item";
+                l.innerHTML = grocery;
+                
+                list.appendChild(l);
+            });
+
+            count.innerHTML = groceries.length;
+        }
+
+        function AddGrocery() {
+            let isvalid = false;
+
+            if (input.value != "") {
+                input.className = "form-control";
+                isvalid = true;
+            }
+            else {
+                input.className = "form-control is-invalid";
+            }
+
+            if (isvalid) {
+                groceries.push(input.value);
+                localStorage.setItem("groceries", JSON.stringify(groceries));
+
+                LoadGroceries();
+            }
+        }
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                button.click();
+            }
+        });
+
+        LoadGroceries();
+    </script>
+</body>
+</html>

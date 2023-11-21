@@ -1,0 +1,34 @@
+{
+    "groceries": {
+        "-NjgesFsXnJWxME7njPD": {
+            "amount": 1,
+            "checked": false,
+            "name": "milk"
+        },
+        "-Njgeu0m5sxP1odWhwb3": {
+            "amount": 1,
+            "checked": false,
+            "name": "eggs"
+        },
+        "-NjgevTk4KTxkaXWvxhH": {
+            "amount": 1,
+            "checked": false,
+            "name": "bread"
+        },
+        "-NjgewzNmyNDhcsvbrkW": {
+            "amount": 1,
+            "checked": false,
+            "name": "cheese"
+        },
+        "-NjgeyPAygW4zHjAtTII": {
+            "amount": 1,
+            "checked": false,
+            "name": "butter"
+        },
+        "-Njgf-Whcc6qEVlxLBXK": {
+            "amount": 1,
+            "checked": false,
+            "name": "beer"
+        }
+    }
+}

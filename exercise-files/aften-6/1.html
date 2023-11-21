@@ -20,12 +20,13 @@
             </div>
         </div>
     </div>
-    <script src="1.js"></script>
     <script type="text/javascript">
+        function Counter() {
+            let s = document.getElementsByClassName('list-group-item').length;
+            return s;
+        }
         
         document.getElementById("count").innerHTML = Counter();
-        
     </script>
-    
 </body>
 </html>
