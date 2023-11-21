@@ -63,12 +63,7 @@
             }
 
             if (isvalid) {
-                const newPostRef = push(testRef);
-                set(newPostRef, {
-                    "name": input.value,
-                    "amount": 1,
-                    "checked": false
-                });
+                // Insert logic here
             }
         });
         
@@ -77,15 +72,9 @@
             button.disabled = false;
             groceries.innerHTML = "";
 
-            Object.keys(data).forEach(key => {
-                let l = document.createElement("li");
-                l.className = "list-group-item";
-                l.innerHTML = data[key].name;
-                
-                groceries.appendChild(l);
-            });
+            // Insert logic here ... 
 
-            document.getElementById("grocery-count").innerHTML = Object.keys(data).length;
+            document.getElementById("grocery-count").innerHTML = 0; // change to actual count
         });
         
     </script>

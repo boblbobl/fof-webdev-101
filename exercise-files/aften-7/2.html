@@ -26,15 +26,13 @@
     </div>
 
     <script>
-        let groceries = JSON.parse(localStorage.getItem("groceries") || "[]");
+        let groceries = [];
 
         const input = document.getElementById("new-grocery-item");
         const button = document.getElementById("button-add");
 
         function EmptyGroceries() {
-            groceries = [];
-            localStorage.clear();
-
+            // Insert logic here
             LoadGroceries();
         }
 
@@ -44,16 +42,9 @@
             
             list.innerHTML = "";
 
-            groceries.forEach(grocery => {
+            // Insert logic here
 
-                let l = document.createElement("li");
-                l.className = "list-group-item";
-                l.innerHTML = grocery;
-                
-                list.appendChild(l);
-            });
-
-            count.innerHTML = groceries.length;
+            count.innerHTML = 0; // change to actual count
         }
 
         function AddGrocery() {
@@ -68,9 +59,7 @@
             }
 
             if (isvalid) {
-                groceries.push(input.value);
-                localStorage.setItem("groceries", JSON.stringify(groceries));
-
+                // Insert logic here
                 LoadGroceries();
             }
         }

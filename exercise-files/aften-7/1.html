@@ -22,18 +22,7 @@
     </div>
     <script>
         function LoadGroceries() {
-            fetch("groceries.json")
-                .then(response => response.json())
-                .then(data => {
-                    let groceries = document.getElementById("grocery-list");
-                    groceries.innerHTML = "";
-                    
-                    data.groceries.forEach(element => {
-                        groceries.innerHTML += `<li class="list-group-item">${element}</li>`;
-                    });
-
-                    document.getElementById("grocery-count").innerHTML = data.groceries.length;
-                })
+            
         }
 
         LoadGroceries();
