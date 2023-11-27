@@ -11,28 +11,30 @@
         <div class="row">
             <div class="col-sm-12 col-lg-6">
                 <h1 class="fs-1 fw-lighter mt-5">Indkøbsliste <span id="grocery-count" class="badge rounded-pill text-bg-success fs-6 align-top">0</span></h1>
+
+                <div class="input-group mb-3">
+                    <input id="new-grocery-item" type="text" class="form-control" placeholder="Beskrivelse af vare" aria-label="Beskrivelse af vare" aria-describedby="button-add">
+                    <button id="button-add" class="btn btn-outline-primary" type="button" onclick="AddGrocery()">Tilføj</button>
+                </div>
                 <ul id="grocery-list" class="list-group">
                     <li class="list-group-item placeholder-glow"><span class="placeholder col-7"></span></li>
                     <li class="list-group-item placeholder-glow"><span class="placeholder col-3"></li>
                     <li class="list-group-item placeholder-glow"><span class="placeholder col-5"></span></li>
                 </ul>
-                <div class="input-group mt-3">
-                    <input id="new-grocery-item" type="text" class="form-control" placeholder="Beskrivelse af vare" aria-label="Beskrivelse af vare" aria-describedby="button-add">
-                    <button id="button-add" class="btn btn-outline-primary" type="button" onclick="AddGrocery()">Tilføj</button>
-                </div>
                 <button class="btn btn-outline-danger mt-3" onclick="EmptyGroceries()">Tøm indkøbsliste</button>
             </div>
         </div>
     </div>
 
     <script>
-        let groceries = [];
+        let groceries = JSON.parse(localStorage.getItem("groceries") || "[]");
 
         const input = document.getElementById("new-grocery-item");
         const button = document.getElementById("button-add");
 
         function EmptyGroceries() {
-            // Insert logic here
+            groceries = [];
+            localStorage.removeItem("groceries");
             LoadGroceries();
         }
 
@@ -42,7 +44,13 @@
             
             list.innerHTML = "";
 
-            // Insert logic here
+            groceries.forEach(grocery => {
+                let li = document.createElement("li");
+                li.className = "list-group-item";
+                li.innerHTML = grocery;
+
+                list.appendChild(li);
+            });
 
             count.innerHTML = 0; // change to actual count
         }
@@ -59,7 +67,9 @@
             }
 
             if (isvalid) {
-                // Insert logic here
+                groceries.unshift(input.value);
+                localStorage.setItem("groceries", JSON.stringify(groceries));
+
                 LoadGroceries();
             }
         }

@@ -12,17 +12,28 @@
             <div class="col-sm-12 col-lg-6">
                 <h1 class="fs-1 fw-lighter mt-5">Indkøbsliste <span id="grocery-count" class="badge rounded-pill text-bg-success fs-6 align-top">-</span></h1>
                 <ul id="grocery-list" class="list-group">
-                    <li class="list-group-item">Toiletpapir</li>
-                    <li class="list-group-item">Opvaskesæbe</li>
-                    <li class="list-group-item">Bananer</li>
-                    <li class="list-group-item">Æbler</li>
                 </ul>
             </div>
         </div>
     </div>
     <script>
         function LoadGroceries() {
-            
+            fetch("groceries.json")
+            .then(response => response.json())
+            .then(data => {
+                let list = document.getElementById("grocery-list");
+                list.innerHTML = "";
+
+                data.groceries.forEach(element => {
+                    let li = document.createElement("li");
+                    li.className = "list-group-item";
+                    li.innerHTML = element;
+
+                    list.appendChild(li);
+                })
+
+                document.getElementById("grocery-count").innerHTML = data.groceries.length;
+            })
         }
 
         LoadGroceries();
