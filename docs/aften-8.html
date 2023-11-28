@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
+    <title>Lær at kode din egen hjemmeside - fra bunden - Aften 8</title>
+</head>
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <h1>Lær at kode din egen hjemmeside</h1>
+                <h2>Aften 8</h2>
+            </section>
+
+            <section>
+                <h2>Overblik</h2>
+                <ul>
+                    <li>Hvad vi har lært (repetition)</li>
+                    <li>Wordpress og andre alternativer</li>
+                    <li>Øvelser
+                        <ol>
+                            <li>Gennemgang med Wordpress</li>
+                            <li>Muligheder med Wordpress og det vi har lært på dette kursus</li>
+                            <li>Flere sider på en SPA</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Hvor er vi?</h3>
+                <ul>
+                    <li>Aften 1: HTML + Visual Studio Code</li>
+                    <li>Aften 2: CSS + NPM</li>
+                    <li>Aften 3: Bootstrap + Git</li>
+                    <li>Aften 4: Mere Bootstrap</li>
+                    <li>Aften 5: Git/GitHub</li>
+                    <li>Aften 6: JavaScript</li>
+                    <li>Aften 7: Mere JavaScript</li>
+                    <li class="fragment highlight-red">Aften 8: Wordpress og andre alternativer</li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Hvad vi har lært (repetition)</h2>
+                </section>
+
+                <section>
+                    <h3>Primære elementer der udgør en hjemmeside</h3>
+                    <img src="assets/html-css-js.png" alt="Illustration af HTML CSS JS">
+                </section>
+
+                <section>
+                    <h3>Browseren anmoder webserveren via HTTP</h3>
+                    <img src="assets/how-the-web-works-3.png" alt="Illustration af hvordan browser anmoder web server">
+                </section>
+
+                <section>
+                    <h3>Hvad er HTML?</h3>
+                    <ul>
+                        <li>HyperText Markup Language</li>
+                        <li>Et dokument der ofte ender med .html eller .htm</li>
+                        <li>Standard sprong til at beskrive hjemmesider</li>
+                        <li>HTML definerer sidens struktur og semantik via HTML elementer</li>
+                        <li>HTML elementer fortæller browseren hvordan indhold skal vises</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Hvad er CSS</h3>
+                    <ul>
+                        <li>Cascading Style Sheet</li>
+                        <li>Bruges til at beskrive præsentation af et HTML dokument</li>
+                        <li>Inkluderes CSS can inkluderes in-line, internt via &lt;style&gt; element i header eller via eksterne stylesheet referencer</li>
+                        <li>Styling sker via CSS Syntax Selectors og Properties</li>
+                        <li>Styling Kaskaderer/Nedarves - styling kan overskrives via præcedens</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Hvad er JavaScript?</h3>
+                    <ul>
+                        <li>High-level intrepreted (fortolket) programmeringssprog</li>
+                        <li>Kan bruges til at tilføje interaktivitet til din hjemmeside
+                            <ul>
+                                <li>Kan manipulere HTML elementer</li>
+                                <li>Kan interagere med browseren</li>
+                                <li>Med hjælp fra indbygget metoder som Date/Math/Strings/Arrays m.fl.</li>
+                            </ul>
+                        </li>
+                        <li>Libraries og Frameworks (JQuery, Bootstrap, D3, GSAP, Threes.js, React, ...)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Målet</h3>
+                    <p>Målet er at I vil kunne lave en "one-pager"</p>
+                    <p>
+                        Find mere inspiration på hvad en "one-pager" kan være/se ud på
+                        <a href="https://onepagelove.com/" target="_blank">One Page Love</a>.
+                    </p>
+                </section>
+
+            </section>
+
+            <section>
+                <section>
+                    <h2>Wordpress og andre alternativer</h2>
+                </section>
+
+                <section>
+                    <h3>Hvad er Wordpress</h3>
+                    <ul>
+                        <li>Wordpress er et Web Content Management System (WCMS)</li>
+                        <li>Siden 2003 af Matt Mullenweg</li>
+                        <li>Står bag ved over 40% af alle websites på Internettet</li>
+                        <li>En PHP løsning</li>
+                        <li>SaaS via Wordpress.com</li>
+                        <li>Self-hosted: Installationer via 1-klik-løsninger</li>
+                        <li>Andre tilsvarende løsninger omfatter bl.a. <a href="https://www.squarespace.com" target="_blank">Squarespace</a>, <a href="https://www.wix.com" target="_blank">Wix</a>, <a href="https://webflow.com" target="_blank">Webflow</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Wordpress.org eller Wordpress.com (1)</h3>
+                    <table>
+                        <th>
+                            <td>Wordpress.org</td>
+                            <td>Wordpress.com</td>
+                        </th>
+                        <tr>
+                            <td>Pris</td>
+                            <td>Gratis *</td>
+                            <td>Gratis eller betalt</td>
+                        </tr>
+                        <tr>
+                            <td>Hosting</td>
+                            <td>Skal selv stå for webserver, sikkerhed, backup</td>
+                            <td>Wordpress.com hoster din løsning og står for det basale (evt. via tilkøb)</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h3>Wordpress.org eller Wordpress.com (2)</h3>
+                    <table>
+                        <th>
+                            
+                            <td>Wordpress.org</td>
+                            <td>Wordpress.com</td>
+                        </th>
+                        <tr>
+                            <td>Funktioner</td>
+                            <td>Alle funktioner er tilgængelig fra starten (inkl. plugins og egne temaer)</td>
+                            <td>Begrænset muligheder afhænging af pris</td>
+                        </tr>
+                        <tr>
+                            <td>SEO/Analytics</td>
+                            <td>Via Plugins (e.g. Google Analytics)</td>
+                            <td>Basalt SEO og Analytics er inkluderet</td>
+                        </tr>
+                    </table>
+                </section>
+
+
+                <section>
+                    <h3>Ressourcer</h3>
+                    <ul>
+                        <li><a href="https://wordpress.com/go/website-building/wordpress-com-vs-wordpress-org/" target="_blank">WordPress.com vs WordPress.org: What’s the Difference?</a></li>
+                    </ul>
+                </section>
+
+            </section>
+
+
+            <section>
+                <section>
+                    <h2>Øvelser</h2>
+                </section>
+
+                <section>
+                    <h3>I aften...</h3>
+                    <ul>
+                        <li>Gennemgang med Wordpress</li>
+                        <li>Muligheder med Wordpress og det vi har lært på dette kursus</li>
+                        <li>Flere sider på en SPA</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <h2>Tak for i aften...</h2>
+            </section>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            plugins: [ RevealHighlight ]
+        });
+    </script>
+</body>
+</html>
