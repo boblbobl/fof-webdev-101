@@ -6,9 +6,10 @@ const rootMain = document.getElementById('root');
 const url = window.location.origin + "/exercise-files/aften-8";
 
 async function loadPage(page) {
-    const response = await fetch(page);
-    const resHtml = await response.text();
-    return resHtml;
+    return fetch(page)
+        .then(response => response.text())
+        .then(data => {return data;})
+        .catch(error => console.log(error));
 }
 
 async function loadAllPages() {
@@ -17,7 +18,7 @@ async function loadAllPages() {
     contact = await loadPage('templates/contact.html');
 }
 
-const main = async () => {
+async function main() {
     await loadAllPages();
     rootMain.innerHTML = home;
     routes = {
