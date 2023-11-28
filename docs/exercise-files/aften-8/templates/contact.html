@@ -1,0 +1,40 @@
+<section class="mt-4">
+    <a id="form"><h2>Tilmeldingsformular</h2></a>
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <div class="mb-3">
+                <label for="name" class="form-label">Navn</label>
+                <input type="text" class="form-control" id="name" placeholder="Hans Hansen">
+                <div class="invalid-feedback">
+                    Husk at udfylde dit navn
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email adresse</label>
+                <input type="email" class="form-control" id="email" placeholder="hans@hansen.com">
+                <div class="invalid-feedback">
+                    Husk at udfylde din email adresse
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="pick-module" class="form-label">Hvilket modul er du interesseret i?</label>
+                <select id="pick-module" class="form-select" aria-label="Vælg et modul">
+                    <option value="0" selected>Vælg et modul</option>
+                    <option value="1">HTML</option>
+                    <option value="2">CSS</option>
+                    <option value="3">JavaScript</option>
+                </select>
+                <div class="invalid-feedback">
+                    Husk at vælge et modul
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <div class="mb-3">
+                <label for="comment" class="form-label">Kommentar</label>
+                <textarea class="form-control" id="comment" rows="3" style="height: 124px; resize: none;"></textarea>
+            </div>
+        </div>
+        <div class="col-12"><button type="button" class="btn btn-primary" onclick="Submit()">Tilmeld</button></div>
+    </div>
+</section>

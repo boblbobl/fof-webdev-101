@@ -3,6 +3,7 @@ let about = '';
 let contact = '';
 
 const rootMain = document.getElementById('root');
+const url = window.location.origin + "/exercise-files/aften-8";
 
 async function loadPage(page) {
     const response = await fetch(page);
@@ -11,9 +12,9 @@ async function loadPage(page) {
 }
 
 async function loadAllPages() {
-    home = await loadPage('home.html');
-    about = await loadPage('about.html');
-    contact = await loadPage('contact.html');
+    home = await loadPage('templates/home.html');
+    about = await loadPage('templates/about.html');
+    contact = await loadPage('templates/contact.html');
 }
 
 const main = async () => {
@@ -25,13 +26,18 @@ const main = async () => {
         '/about': about,
     };
 
+    window.onpopstate = () => {
+        let lastSlash = window.location.pathname.lastIndexOf("/");
+        rootMain.innerHTML = routes[window.location.pathname.substring(lastSlash)];
+    };
+
     document.querySelectorAll('.nav-link').forEach((link) => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
-    
+            
             let pathname = link.getAttribute("data-path");
     
-            window.history.pushState({}, pathname, window.location.origin + pathname);
+            window.history.pushState({}, pathname, url + pathname);
             rootMain.innerHTML = routes[pathname];
         });
     });
